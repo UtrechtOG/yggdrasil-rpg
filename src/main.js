@@ -13,15 +13,13 @@ function render() {
   ctx.fillRect(0, 0, CONFIG.WIDTH, CONFIG.HEIGHT);
 
   ctx.fillStyle = 'white';
-  ctx.font = '16px monospace';
-  ctx.fillText('INPUT:', 20, 30);
+  ctx.font = '18px monospace';
+  ctx.fillText('INPUT STATE:', 20, 30);
 
-  let y = 50;
+  let y = 60;
   for (const key in input) {
-    if (input[key]) {
-      ctx.fillText(key, 20, y);
-      y += 20;
-    }
+    ctx.fillText(`${key}: ${input[key]}`, 20, y);
+    y += 22;
   }
 }
 
