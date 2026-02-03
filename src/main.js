@@ -9,6 +9,7 @@ import { Player } from './player.js';
 import { drawPlayer } from './renderer.js';
 
 const player = new Player();
+const debugEl = document.getElementById('input-debug');
 
 function update() {
   player.update(input);
@@ -20,16 +21,15 @@ function render() {
 
   drawPlayer(ctx, player);
 
-  // Debug Input
-  ctx.fillStyle = 'white';
-  ctx.font = '14px monospace';
-  ctx.fillText('INPUT:', 10, 20);
-
-  let y = 40;
+  // Debug-Text für Controller
+  let active = [];
   for (const key in input) {
-    ctx.fillText(`${key}: ${input[key]}`, 10, y);
-    y += 18;
+    if (input[key]) active.push(key);
   }
+
+  debugEl.textContent = active.length
+    ? 'INPUT: ' + active.join(', ')
+    : 'INPUT: none';
 }
 
 function gameLoop() {
