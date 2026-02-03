@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <title>Yggdrasil RPG</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 <body>
-  <canvas id="game"></canvas>
 
-  <script type="module" src="./src/main.js"></script>
+<canvas id="game"></canvas>
+
+<div id="controls">
+  <div class="dpad">
+    <button id="btn-up">▲</button>
+    <div class="middle">
+      <button id="btn-left">◀</button>
+      <button id="btn-right">▶</button>
+    </div>
+    <button id="btn-down">▼</button>
+  </div>
+
+  <div class="actions">
+    <button id="btn-action">A</button>
+    <button id="btn-menu">☰</button>
+  </div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
 </body>
 </html>
