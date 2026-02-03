@@ -3,36 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <title>Yggdrasil RPG</title>
+
+  <!-- Wichtig für Mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Cache-Buster (bei Problemen Zahl erhöhen) -->
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
-<div id="game-container">
-  <canvas id="game"></canvas>
-  <div id="ui-boundary"></div>
-</div>
+  <!-- ================= GAME ================= -->
+  <div id="game-container">
+    <canvas id="game"></canvas>
 
-<div id="ui-layer">
-  <div id="controller-panel">
-    <div class="dpad">
-      <button id="btn-up">▲</button>
-      <div class="middle">
-        <button id="btn-left">◀</button>
-        <button id="btn-right">▶</button>
-      </div>
-      <button id="btn-down">▼</button>
-    </div>
-
-    <div class="actions">
-      <button id="btn-action">A</button>
-      <button id="btn-menu">☰</button>
-    </div>
+    <!-- Sichtbare Map-Grenze -->
+    <div id="ui-boundary"></div>
   </div>
 
-  <div id="input-debug"></div>
-</div>
+  <!-- ================= UI ================= -->
+  <div id="ui-layer">
 
-<script type="module" src="./src/main.js"></script>
+    <!-- Controller -->
+    <div id="controller-panel">
+
+      <!-- D-PAD -->
+      <div class="dpad">
+        <button id="btn-up">▲</button>
+
+        <div class="middle">
+          <button id="btn-left">◀</button>
+          <button id="btn-right">▶</button>
+        </div>
+
+        <button id="btn-down">▼</button>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="actions">
+        <button id="btn-action">A</button>
+        <button id="btn-menu">☰</button>
+      </div>
+
+    </div>
+
+    <!-- Input Debug -->
+    <div id="input-debug">
+      waiting for input…
+    </div>
+
+  </div>
+
+  <!-- ================= GAME SCRIPT ================= -->
+  <!-- Cache-Buster auch hier -->
+  <script type="module" src="./src/main.js?v=3"></script>
+
 </body>
 </html>
