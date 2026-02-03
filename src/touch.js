@@ -1,25 +1,26 @@
 // src/touch.js
-import { input } from './input.js';
+import { input, inputTime } from './input.js';
 
 function bind(id, key) {
   const el = document.getElementById(id);
-  if (!el) {
-    console.warn('Button not found:', id);
-    return;
-  }
+  if (!el) return;
 
   el.addEventListener('touchstart', (e) => {
     e.preventDefault();
     input[key] = true;
+    el.classList.add('active');
   }, { passive: false });
 
-  el.addEventListener('touchend', (e) => {
-    e.preventDefault();
+  el.addEventListener('touchend', () => {
     input[key] = false;
-  }, { passive: false });
+    inputTime[key] = 0;
+    el.classList.remove('active');
+  });
 
   el.addEventListener('touchcancel', () => {
     input[key] = false;
+    inputTime[key] = 0;
+    el.classList.remove('active');
   });
 }
 
