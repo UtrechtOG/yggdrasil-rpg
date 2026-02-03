@@ -10,21 +10,24 @@
 
 <div id="game-container">
   <canvas id="game"></canvas>
+  <div id="ui-boundary"></div>
 </div>
 
-<div id="controller-panel">
-  <div class="dpad">
-    <button id="btn-up">▲</button>
-    <div class="middle">
-      <button id="btn-left">◀</button>
-      <button id="btn-right">▶</button>
+<div id="ui-layer">
+  <div id="controller-panel">
+    <div class="dpad">
+      <button id="btn-up">▲</button>
+      <div class="middle">
+        <button id="btn-left">◀</button>
+        <button id="btn-right">▶</button>
+      </div>
+      <button id="btn-down">▼</button>
     </div>
-    <button id="btn-down">▼</button>
-  </div>
 
-  <div class="actions">
-    <button id="btn-action">A</button>
-    <button id="btn-menu">☰</button>
+    <div class="actions">
+      <button id="btn-action">A</button>
+      <button id="btn-menu">☰</button>
+    </div>
   </div>
 
   <div id="input-debug"></div>
